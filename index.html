@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sticky Header</title>
+  <style>
+    *{
+      margin-top: 0;
+      margin-bottom: 5px;
+      font-family: Arial;
+    }
+    body{
+      margin-top: 10px;
+      border: 6px solid green;
+      padding: 10px 15px;
+      border-radius: 30px;
+    }
+    h2{
+      color: navy;
+      background-color: antiquewhite;
+      text-align: center;
+      padding: 10px 15px;
+    }
+
+    ul{
+      list-style: none;
+    }
+    a{
+      font-size: 20px;
+      text-decoration: none;
+    }
+    h3{
+      color: Green;
+      font-size: 15px;
+      padding: 10px;
+    }
+    p{
+      line-height: 25px;
+      text-align: justify;
+    }
+    .position-sticky{
+      position: sticky;
+      top: 0;
+      color: Red;
+      font-weight: bold;
+      background-color: antiquewhite;
+      z-index: 10;
+
+    }
+    img{
+      width: 100%;
+      border-radius: 50px;
+    }
+  </style>
+</head>
+<body>
+      <h2>CSS Position Properties</h2>
+
+      <div>
+        <section>
+          <ul>
+              <li><a href="#static">position - static</a></li>
+              <li><a href="#relative">position - relative</a></li>
+              <li><a href="#fixed">position - fixed</a></li>
+              <li><a href="#absolute">position - absolute</a></li>
+              <li><a href="#sticky">position -sticky</a></li>
+          </ul>
+        </section>
+        <section>
+          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR3o1VzBQPTny8sh6nMXpP934Dv9Dt-Si8SKg&s" >
+        <h3 id="static">Static</h3>
+        <p>All HTML elements are positioned static by default. Static positioned elements are not affected by the top, bottom, left, and right properties.An element with position: static; is always positioned according to the normal flow of the page:</p>
+        <br>
+
+        <h3 id="relative">Relative</h3>
+        <p>An element with position: relative; is positioned relative to its normal position in the document flow. Setting the top, right, bottom, and left properties will cause the element to be adjusted away from its normal position. Other content will not be adjusted to fit into any gap left by the element.</p>
+        <br>
+        <h3 id="absolute">Absolute</h3>
+        <p>position: absolute removes the element completely from the normal flow and positions it relative to the closest ancestor that has a position (relative, absolute, or fixed). If no such ancestor exists, it uses the entire page as its reference. Absolute elements can overlap other elements and do not take up space.</p>
+        <br>
+        <h3 id="fixed">Fixed</h3>
+        <p>position: fixed keeps an element stuck in the same place on the screen, even when you scroll. It is positioned relative to the browser window (viewport). Since it is removed from the normal flow, it can overlap other elements. This is commonly used for sticky navbars, floating buttons, and banners.</p>
+        <br>
+
+        <h3 id="sticky">Sticky</h3>
+        <p>position: sticky acts like a mix of relative and fixed. Initially, it behaves like relative and moves with the page. Once the element reaches a specific scroll position (like top: 0 or top: 50px), it becomes fixed and sticks to that position. It is mainly used for sticky headers, menus, and scroll sections.</p>
+
+
+        
+          </section>
+        
+      </div>
+
+
+      <script>
+        let heading = document.querySelector('h2')
+
+        window.addEventListener("scroll",function(){
+          if (window.scrollY>50){
+            heading.classList.add("position-sticky")
+          }else{
+            heading.classList.remove("position-sticky")
+          }
+        })
+      </script>
+</body>
+</html>
